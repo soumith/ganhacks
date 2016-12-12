@@ -35,7 +35,7 @@ In practice, works well:
 ![sphere](images/sphere.png "Sphere")
 
 - When doing interpolations, do the interpolation via a great circle, rather than a straight line from point A to point B
-- Tom White's [Sampling Generative Networks](https://arxiv.org/abs/1609.04468) has more details
+- Tom White's [Sampling Generative Networks](https://arxiv.org/abs/1609.04468) ref code https://github.com/dribnet/plat has more details
 
 
 ## 4: BatchNorm
