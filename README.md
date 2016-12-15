@@ -125,6 +125,12 @@ while lossG > B:
 - Add as additional channels to images
 - Keep embedding dimensionality low and upsample to match image channel size
 
+## 17: Use Dropouts in G in both train and test phase
+- Provide noise in the form of dropout (50%).
+- Apply on several layers of our generator at both training and test time
+- https://arxiv.org/pdf/1611.07004v1.pdf
+
+
 ## Authors
 - Soumith Chintala
 - Emily Denton
