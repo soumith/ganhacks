@@ -130,6 +130,13 @@ while lossG > B:
 - Apply on several layers of our generator at both training and test time
 - https://arxiv.org/pdf/1611.07004v1.pdf
 
+## 18: Sample From G History
+- For each batch, sample half of the images from the current generator and half from a history of generated images
+- Section 2.3 https://arxiv.org/pdf/1612.07828.pdf
+
+## 19: Historical Averaging
+- Use a historical average of learned parameters (complements #18)
+- Section 3.3 https://arxiv.org/pdf/1606.03498.pdf
 
 ## Authors
 - Soumith Chintala
