@@ -80,6 +80,7 @@ In practice, works well:
 ## 10: Track failures early
 
 - D loss goes to 0: failure mode
+- Simple sanity check : Train G without updating weights for D (don't do G_optimizer.step()) and make sure loss goes down and vice versa.
 - check norms of gradients: if they are over 100 things are screwing up
 - when things are working, D loss has low variance and goes down over time vs having huge variance and spiking
 - if loss of generator steadily decreases, then it's fooling D with garbage (says martin)
