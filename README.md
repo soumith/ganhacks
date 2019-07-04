@@ -38,12 +38,15 @@ In practice, works well:
 - Tom White's [Sampling Generative Networks](https://arxiv.org/abs/1609.04468) ref code https://github.com/dribnet/plat has more details
 
 
-## 4: BatchNorm
+## 4.a Batch normalization
 
 - Construct different mini-batches for real and fake, i.e. each mini-batch needs to contain only all real images or all generated images.
-- when batchnorm is not an option use instance normalization (for each sample, subtract mean and divide by standard deviation).
 
 ![batchmix](images/batchmix.png "BatchMix")
+
+## 4.b Layer normalization
+- when batchnorm is not an option use instance normalization (for each sample, subtract mean and divide by standard deviation).
+- use spectral normalization on discriminator (https://arxiv.org/abs/1802.05957)
 
 ## 5: Avoid Sparse Gradients: ReLU, MaxPool
 - the stability of the GAN game suffers if you have sparse gradients
