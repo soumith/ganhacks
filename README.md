@@ -113,10 +113,12 @@ while lossG > B:
 - adding gaussian noise to every layer of generator (Zhao et. al. EBGAN)
   - Improved GANs: OpenAI code also has it (commented out)
 
-## 14: [notsure] Train discriminator more (sometimes)
+## 14: Train discriminator more
 
 - especially when you have noise
 - hard to find a schedule of number of D iterations vs G iterations
+- train discriminator in n times using Wasserstein distance 
+  - also makes losses correlates with sample quality
 
 ## 15: [notsure] Batch Discrimination
 
