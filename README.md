@@ -130,6 +130,11 @@ while lossG > B:
 - Apply on several layers of our generator at both training and test time
 - https://arxiv.org/pdf/1611.07004v1.pdf
 
+## 18: For VAEs: Use Focal Loss as Reconstruction Error
+- Greedy pretraining: use MSE loss at high learning rate (~0.01) for few epochs until output appears to be in the right "ballpark"; Tanh activation output layer; images scaled \[-1,1\]
+- Subsequently, scale images between \[0,1\], loading the saved weights from greedy pretraining phase, use Sigmoid activation function in output layer and Focal loss as reconstruction error at a very low learning rate (1e-6 or less)
+- See custom Tensorflow loss functions [in Python with link to paper on arXiv](https://github.com/umbertogriffo/focal-loss-keras) and [in R](https://gist.github.com/PsycheShaman/ea39081d9f549ac410a3a8ea942a072b)
+
 
 ## Authors
 - Soumith Chintala
