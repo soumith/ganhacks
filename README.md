@@ -1,3 +1,5 @@
+(this list is no longer maintained, and I am not sure how relevant it is in 2020)
+
 # How to Train a GAN? Tips and tricks to make GANs work
 
 While research in Generative Adversarial Networks (GANs) continues to improve the
