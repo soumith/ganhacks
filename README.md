@@ -6,7 +6,7 @@ While research in Generative Adversarial Networks (GANs) continues to improve th
 fundamental stability of these models,
 we use a bunch of tricks to train them and make them stable day to day.
 
-Here are a summary of some of the tricks.
+Here is a summary of some of the tricks.
 
 [Here's a link to the authors of this document](#authors)
 
@@ -21,13 +21,16 @@ If we find it to be reasonable and verified, we will merge it in.
 ## 2: A modified loss function
 
 In GAN papers, the loss function to optimize G is `min (log 1-D)`, but in practice folks practically use `max log D`
-  - because the first formulation has vanishing gradients early on
-  - Goodfellow et. al (2014)
+
+- because the first formulation has vanishing gradients early on
+- Goodfellow et. al (2014)
 
 In practice, works well:
-  - Flip labels when training generator: real = fake, fake = real
+
+- Flip labels when training generator: real = fake, fake = real
 
 ## 3: Use a spherical Z
+
 - Dont sample from a Uniform distribution
 
 ![cube](images/cube.png "Cube")
@@ -39,7 +42,6 @@ In practice, works well:
 - When doing interpolations, do the interpolation via a great circle, rather than a straight line from point A to point B
 - Tom White's [Sampling Generative Networks](https://arxiv.org/abs/1609.04468) ref code https://github.com/dribnet/plat has more details
 
-
 ## 4: BatchNorm
 
 - Construct different mini-batches for real and fake, i.e. each mini-batch needs to contain only all real images or all generated images.
@@ -48,6 +50,7 @@ In practice, works well:
 ![batchmix](images/batchmix.png "BatchMix")
 
 ## 5: Avoid Sparse Gradients: ReLU, MaxPool
+
 - the stability of the GAN game suffers if you have sparse gradients
 - LeakyReLU = good (in both G and D)
 - For Downsampling, use: Average Pooling, Conv2d + stride
@@ -93,6 +96,7 @@ In practice, works well:
 - If you do try it, have a principled approach to it, rather than intuition
 
 For example
+
 ```
 while lossD > A:
   train D
@@ -128,12 +132,13 @@ while lossG > B:
 - Keep embedding dimensionality low and upsample to match image channel size
 
 ## 17: Use Dropouts in G in both train and test phase
+
 - Provide noise in the form of dropout (50%).
 - Apply on several layers of our generator at both training and test time
 - https://arxiv.org/pdf/1611.07004v1.pdf
 
-
 ## Authors
+
 - Soumith Chintala
 - Emily Denton
 - Martin Arjovsky
