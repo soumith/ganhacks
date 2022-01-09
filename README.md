@@ -102,7 +102,7 @@ while lossG > B:
 
 ## 12: If you have labels, use them
 
-- if you have labels available, training the discriminator to also classify the samples: auxillary GANs
+- if you have labels available, training the discriminator to also classify the samples: auxiliary GANs
 
 ## 13: Add noise to inputs, decay over time
 
